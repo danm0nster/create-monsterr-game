@@ -1,4 +1,4 @@
-# create=monsterr-game
+# create-monsterr-game
 
 Scaffolding tool for [monsterr](https://github.com/skbogner/monsterr).
 
