@@ -1,0 +1,23 @@
+{
+  "name": "my-game",
+  "version": "1.0.0",
+  "description": "monsterr game template",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build client.js & parcel build server.js --target node",
+    "watch-client": "parcel watch client.js --log-level 1",
+    "watch-server": "parcel watch server.js --target node --log-level 2",
+    "dev": "parallelshell \"yarn watch-client\" \"yarn watch-server\" \"nodemon dist/server.js --watch dist/server.js\"",
+    "start": "yarn build && node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "monsterr": "^0.1.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.7.1",
+    "parallelshell": "^3.0.2"
+  }
+}
