@@ -13,7 +13,7 @@ const packageJsonFile = requireAsString('./files/package.json')
 const clientJsFile = requireAsString('./files/client.js')
 const serverJsFile = requireAsString('./files/server.js')
 const eslintrcJsonFile = requireAsString('./files/.eslintrc.json')
-const gitignoreFile = requireAsString('./files/.gitignore')
+const gitignoreFile = requireAsString('./files/gitignore')
 
 // First we get a name for the game (directory)
 const gameName = process.argv[2]

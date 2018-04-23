@@ -1,6 +1,6 @@
 {
   "name": "create-monsterr-game",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Scaffolding tool for monsterr",
   "main": "index.js",
   "scripts": {
