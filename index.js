@@ -9,9 +9,11 @@ const requireAsString = function (path) {
   return fs.readFileSync(fileName, 'utf8')
 }
 
-const packageJsonFile = require('./files/package.json')
+const packageJsonFile = requireAsString('./files/package.json')
 const clientJsFile = requireAsString('./files/client.js')
 const serverJsFile = requireAsString('./files/server.js')
+const eslintrcJsonFile = requireAsString('./files/.eslintrc.json')
+const gitignoreFile = requireAsString('./files/.gitignore')
 
 // First we get a name for the game (directory)
 const gameName = process.argv[2]
@@ -29,23 +31,23 @@ if (fs.existsSync(gameName)) {
   process.exit(-1)
 }
 
-/**
- * We will do the following steps:
- * => Create directory
- * => Create package.json & install dependencies
- * => Create sample files & folders
- */
+
+/** SCRIPT */
 
 // => Create directory
 fs.mkdirSync(gameName)
 
 // => Create package.json & install dependencies
 packageJsonFile.name = gameName
-fs.writeFileSync(path.join(gameName, 'package.json'), JSON.stringify(packageJsonFile, null, 2))
+fs.writeFileSync(path.join(gameName, 'package.json'), packageJsonFile)
 child_process.execSync('npm install', {
   cwd: gameName,
   stdio: [0, 1, 2]
 })
+
+// => Create config files
+fs.writeFileSync(path.join(gameName, '.eslintrc.json'), eslintrcJsonFile)
+fs.writeFileSync(path.join(gameName, '.gitignore'), gitignoreFile)
 
 // => Create sample files & folders
 fs.writeFileSync(path.join(gameName, 'client.js'), clientJsFile)
