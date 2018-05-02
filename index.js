@@ -46,8 +46,8 @@ if (fs.existsSync(gameName)) {
 fs.mkdirSync(gameName)
 fs.mkdirSync(path.join(gameName, 'assets'))
 fs.mkdirSync(path.join(gameName, 'src'))
-fs.mkdirSync(path.join(gameName, 'src', 'stages')
-fs.mkdirSync(path.join(gameName, 'src', 'stages', 'stage1')
+fs.mkdirSync(path.join(gameName, 'src', 'stages'))
+fs.mkdirSync(path.join(gameName, 'src', 'stages', 'stage1'))
 
 // => Create package.json & install dependencies
 packageJsonFile.name = gameName
