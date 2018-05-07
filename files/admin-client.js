@@ -1,8 +1,8 @@
 import createClient from 'monsterr'
-import stages from './src/stages'
 
 let options = {
-  canvasBackgroundColor: 'blue'
+  canvasBackgroundColor: 'red',
+  htmlContainerHeight: 0.8
 }
 
 let events = {}
@@ -11,6 +11,6 @@ let commands = {}
 createClient({
   events,
   commands,
-  options,
-  stages
+  options
+  // no need to add stages to admin
 })

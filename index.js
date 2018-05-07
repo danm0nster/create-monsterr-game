@@ -12,8 +12,11 @@ const requireAsString = function (path) {
 // Base files
 const packageJsonFile = requireAsString('./files/package.json')
 const clientJsFile = requireAsString('./files/client.js')
+const adminClientJsFile = requireAsString('./files/admin-client.js')
 const serverJsFile = requireAsString('./files/server.js')
 const eslintrcJsonFile = requireAsString('./files/.eslintrc.json')
+const postcssrcFile = requireAsString('./files/.postcssrc')
+const babelrcFile = requireAsString('./files/.babelrc')
 const gitignoreFile = requireAsString('./files/gitignore')
 // Stages
 const stagesIndexFile = requireAsString('./files/src/stages/index.js')
@@ -60,9 +63,12 @@ child_process.execSync('npm install', {
 // => Create config files
 fs.writeFileSync(path.join(gameName, '.eslintrc.json'), eslintrcJsonFile)
 fs.writeFileSync(path.join(gameName, '.gitignore'), gitignoreFile)
+fs.writeFileSync(path.join(gameName, '.babelrc'), babelrcFile)
+fs.writeFileSync(path.join(gameName, '.postcssrc'), postcssrcFile)
 
 // => Create sample files
 fs.writeFileSync(path.join(gameName, 'client.js'), clientJsFile)
+fs.writeFileSync(path.join(gameName, 'admin-client.js'), adminClientJsFile)
 fs.writeFileSync(path.join(gameName, 'server.js'), serverJsFile)
 fs.writeFileSync(path.join(gameName, 'src', 'stages', 'index.js'), stagesIndexFile)
 fs.writeFileSync(path.join(gameName, 'src', 'stages', 'stage1', 'index.js'), stage1IndexFile)
