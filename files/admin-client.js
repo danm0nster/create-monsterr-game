@@ -1,16 +1,36 @@
+/* globals $ */
 import createClient from 'monsterr'
+
+import html from './src/admin-client.html'
+import './src/admin-client.css'
 
 let options = {
   canvasBackgroundColor: 'red',
-  htmlContainerHeight: 0.8
+  htmlContainerHeight: 0.5,
+  // HTML is included in options for admin
+  html
 }
 
 let events = {}
 let commands = {}
 
-createClient({
+const admin = createClient({
   events,
   commands,
   options
   // no need to add stages to admin
+})
+
+// Button event handlers
+$('#admin-button-start').mouseup(e => {
+  e.preventDefault()
+  admin.sendCommand('start')
+})
+$('#admin-button-next').mouseup(e => {
+  e.preventDefault()
+  admin.sendCommand('next')
+})
+$('#admin-button-reset').mouseup(e => {
+  e.preventDefault()
+  admin.sendCommand('reset')
 })
