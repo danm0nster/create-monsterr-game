@@ -1,5 +1,9 @@
 import createClient from 'monsterr'
-import stages from './src/stages'
+import stage1 from './src/stages/stage1/client'
+
+const stages = [
+  stage1
+]
 
 let options = {
   canvasBackgroundColor: 'blue',

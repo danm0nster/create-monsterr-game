@@ -21,7 +21,7 @@ const admin = createClient({
   // no need to add stages to admin
 })
 
-// Button event handlers
+// Button event handlers (if you need more you should probably put them in a separate file and import it here)
 $('#admin-button-start').mouseup(e => {
   e.preventDefault()
   admin.sendCommand('start')
