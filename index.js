@@ -15,6 +15,7 @@ const clientJsFile = requireAsString('./files/client.js')
 const adminClientJsFile = requireAsString('./files/admin-client.js')
 const adminClientHtmlFile = requireAsString('./files/src/admin-client.html')
 const adminClientCssFile = requireAsString('./files/src/admin-client.css')
+const botJsFile = requireAsString('./files/src/bot.js')
 const serverJsFile = requireAsString('./files/server.js')
 const eslintrcJsonFile = requireAsString('./files/.eslintrc.json')
 const postcssrcFile = requireAsString('./files/.postcssrc')
@@ -75,6 +76,10 @@ fs.writeFileSync(
 fs.writeFileSync(
   path.join(gameName, 'src', 'admin-client.css'),
   adminClientCssFile
+)
+fs.writeFileSync(
+  path.join(gameName, 'src', 'bot.js'),
+  botJsFile
 )
 fs.writeFileSync(path.join(gameName, 'server.js'), serverJsFile)
 fs.writeFileSync(

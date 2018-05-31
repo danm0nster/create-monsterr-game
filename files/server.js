@@ -10,7 +10,11 @@ const monsterr = createServer({
   network: Network.pairs(8),
   events,
   commands,
-  stages
+  stages,
+  options: {
+    clientPassword: undefined,  // can specify client password
+    adminPassword: 'sEcr3t'     // and admin password
+  }
 })
 
 monsterr.run()
