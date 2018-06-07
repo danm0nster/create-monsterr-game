@@ -18,13 +18,13 @@ export default {
   // Optionally define a setup method that is run before stage begins
   setup: (server) => {
     console.log('PREPARING SERVER FOR STAGE',
-      server.getStageManager().getCurrentStage())
+      server.getCurrentStage())
   },  
   
   // Optionally define a teardown method that is run when stage finishes
   teardown: (server) => {
     console.log('CLEANUP SERVER AFTER STAGE',
-      server.getStageManager().getCurrentStage())
+      server.getCurrentStage())
   },
 
   // Configure options
