@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "monsterr": "^0.2.2"
+    "monsterr": "^0.2.3"
   },
   "devDependencies": {
     "babel-plugin-transform-html-import-to-string": "0.0.1",
